@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#camada-gold-business-modeling" class="md-skip">
+        <a href="#apache-spark" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -580,10 +580,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-da-camada" class="md-nav__link">
+  <a href="#o-papel-do-spark-no-projeto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objetivos da Camada
+        O Papel do Spark no Projeto
       
     </span>
   </a>
@@ -591,60 +591,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#o-modelo-de-dados" class="md-nav__link">
+  <a href="#configuracao-da-sessao-sparksession" class="md-nav__link">
     <span class="md-ellipsis">
       
-        O Modelo de Dados
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="O Modelo de Dados">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-dimensao-tempo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Dimensão Tempo
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-dimensao-localidade-merge-incremental" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Dimensão Localidade (Merge Incremental)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-tabela-fato-ouvidoria-o-coracao-do-projeto" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Tabela Fato Ouvidoria (O Coração do Projeto)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#valor-agregado-ao-negocio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Valor Agregado ao Negócio
+        Configuração da Sessão (SparkSession)
       
     </span>
   </a>
@@ -686,10 +636,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objetivos-da-camada" class="md-nav__link">
+  <a href="#o-papel-do-spark-no-projeto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objetivos da Camada
+        O Papel do Spark no Projeto
       
     </span>
   </a>
@@ -697,60 +647,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#o-modelo-de-dados" class="md-nav__link">
+  <a href="#configuracao-da-sessao-sparksession" class="md-nav__link">
     <span class="md-ellipsis">
       
-        O Modelo de Dados
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="O Modelo de Dados">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-dimensao-tempo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Dimensão Tempo
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-dimensao-localidade-merge-incremental" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Dimensão Localidade (Merge Incremental)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-tabela-fato-ouvidoria-o-coracao-do-projeto" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Tabela Fato Ouvidoria (O Coração do Projeto)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#valor-agregado-ao-negocio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Valor Agregado ao Negócio
+        Configuração da Sessão (SparkSession)
       
     </span>
   </a>
@@ -777,70 +677,70 @@
   
 
 
-<h1 id="camada-gold-business-modeling">Camada Gold (Business &amp; Modeling)</h1>
-<p>A camada <strong>Gold</strong> é o estágio final da nossa jornada de dados. Aqui, as informações são modeladas no formato <strong>Star Schema</strong> (Modelo Estrela), otimizadas para consultas rápidas e criação de dashboards em ferramentas como Power BI ou Tableau.</p>
-<h2 id="objetivos-da-camada">Objetivos da Camada</h2>
-<ul>
-<li><strong>Modelagem Dimensional:</strong> Criação de Tabelas Fato e Dimensões.</li>
-<li><strong>Identidade Única:</strong> Implementação de <em>Surrogate Keys</em> (SK) para garantir a integridade histórica.</li>
-<li><strong>Regras de Negócio:</strong> Consolidação de métricas e relacionamentos complexos.</li>
-</ul>
-<h2 id="o-modelo-de-dados">O Modelo de Dados</h2>
-<p>Nosso modelo foca no processo de <strong>Ouvidoria</strong>, relacionando-o com as dimensões de <strong>Tempo</strong>, <strong>Usuário</strong> e <strong>Localidade</strong>.</p>
-<h3 id="1-dimensao-tempo">1. Dimensão Tempo</h3>
-<p>Essencial para análises de sazonalidade e evolução temporal das manifestações.
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Criamos a dimensão tempo com base no intervalo de datas das ouvidorias</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">workspace</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">dim_tempo</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="n">DELTA</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">SELECT</span><span class="w"> </span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">EXPLODE</span><span class="p">(</span><span class="n">SEQUENCE</span><span class="p">(</span><span class="n">to_date</span><span class="p">(</span><span class="s1">&#39;2024-01-01&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">to_date</span><span class="p">(</span><span class="s1">&#39;2026-12-31&#39;</span><span class="p">),</span><span class="w"> </span><span class="nb">interval</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">day</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">DATA</span><span class="p">,</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">YEAR</span><span class="p">(</span><span class="k">DATA</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ANO</span><span class="p">,</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">MONTH</span><span class="p">(</span><span class="k">DATA</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">MES</span><span class="p">,</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="k">DAY</span><span class="p">(</span><span class="k">DATA</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">DIA</span><span class="p">;</span>
-</span></code></pre></div></p>
-<h3 id="2-dimensao-localidade-merge-incremental">2. Dimensão Localidade (Merge Incremental)</h3>
-<p>Aqui resolvemos a normalização entre Cidades e Estados. Utilizamos o comando MERGE para garantir que, se um nome de cidade mudar, a Gold seja atualizada sem duplicar registros.</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">MERGE</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">workspace</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">dim_localidade</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">d</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">USING</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">ID_CIDADE</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">NOME_CIDADE</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">NOME_ESTADO</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">SIGLA_ESTADO</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">silver_cidade</span><span class="w"> </span><span class="k">c</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">silver_estado</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">COD_ESTADO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">ID_ESTADO</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">r</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">ON</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">ID_CIDADE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">ID_CIDADE</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">WHEN</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="n">MATCHED</span><span class="w"> </span><span class="k">THEN</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="k">INSERT</span><span class="w"> </span><span class="p">(</span><span class="n">ID_CIDADE</span><span class="p">,</span><span class="w"> </span><span class="n">NOME_CIDADE</span><span class="p">,</span><span class="w"> </span><span class="n">NOME_ESTADO</span><span class="p">,</span><span class="w"> </span><span class="n">SIGLA_ESTADO</span><span class="p">)</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">ID_CIDADE</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">NOME_CIDADE</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">NOME_ESTADO</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">SIGLA_ESTADO</span><span class="p">);</span>
+<h1 id="apache-spark">Apache Spark</h1>
+<div class="admonition info">
+<p class="admonition-title">O que é o Apache Spark?</p>
+<p>O <strong>Apache Spark</strong> é um sistema de processamento distribuído de código aberto, projetado para lidar com workloads de Big Data. No contexto de Data Lakes modernos, ele atua como o principal motor computacional, utilizando armazenamento em cache na memória para executar transformações e consultas pesadas de forma extremamente rápida.</p>
+</div>
+<h2 id="o-papel-do-spark-no-projeto">O Papel do Spark no Projeto</h2>
+<p>Neste projeto, o Spark (através do <strong>PySpark</strong>) atua como a espinha dorsal de todo o pipeline de ETL (Extração, Transformação e Carga). Ele foi configurado para rodar localmente sobre um ambiente Python gerenciado pelo <code>uv</code>, comunicando-se ativamente com a infraestrutura em Docker (PostgreSQL e MinIO).</p>
+<p>Suas responsabilidades foram divididas em quatro rotinas principais (Notebooks):</p>
+<div class="admonition success">
+<p class="admonition-title">Módulos de Processamento</p>
+<ol>
+<li><strong>Setup Transacional (<code>00_setup_postgres</code>):</strong> Carga em lote (Bulk Insert) lendo arquivos CSV locais e escrevendo no PostgreSQL via driver JDBC para simular um banco de produção.</li>
+<li><strong>Extração para Landing Zone (<code>01_postgres_to_minio_csv</code>):</strong> Leitura de dados do PostgreSQL através de queries distribuídas e gravação bruta no Object Storage (MinIO) no formato <code>.csv</code>.</li>
+<li><strong>Conversão para Lakehouse (<code>02_csv_to_delta</code>):</strong> Processamento dos CSVs da Landing Zone, inferência de schemas e conversão para tabelas <strong>Delta Lake</strong> na camada Bronze.</li>
+<li><strong>Manipulação ACID (<code>03_dml_delta</code>):</strong> Uso do Spark SQL para disparar comandos DML (Insert, Update, Delete) diretamente sobre os arquivos parquet do MinIO.</li>
+</ol>
+</div>
+<hr />
+<h2 id="configuracao-da-sessao-sparksession">Configuração da Sessão (SparkSession)</h2>
+<p>Para que o Spark consiga conversar perfeitamente com o ecossistema do projeto, a inicialização da <code>SparkSession</code> exige a injeção de bibliotecas Java (JARS) e extensões SQL específicas.</p>
+<p>Abaixo está o detalhamento da configuração utilizada na nossa rotina principal:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python title=&quot;Configuração PySpark + Delta + PostgreSQL&quot;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>from pyspark.sql import SparkSession
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>spark = SparkSession.builder \
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    .appName(&quot;PipelineOuvidoria&quot;) \
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    # 1. Dependências Maven (JARS)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    .config(&quot;spark.jars.packages&quot;, &quot;org.postgresql:postgresql:42.7.3,io.delta:delta-spark_2.12:3.2.0,org.apache.hadoop:hadoop-aws:3.3.4&quot;) \
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    # 2. Extensões SQL do Delta Lake
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    .config(&quot;spark.sql.extensions&quot;, &quot;io.delta.sql.DeltaSparkSessionExtension&quot;) \
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    # 3. Configuração do Catálogo (Spark)
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    .config(&quot;spark.sql.catalog.spark_catalog&quot;, &quot;org.apache.spark.sql.delta.catalog.DeltaCatalog&quot;) \
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    # 4. Credenciais e Endpoint do MinIO (S3)
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    .config(&quot;spark.hadoop.fs.s3a.endpoint&quot;, &quot;http://localhost:9020&quot;) \
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    .config(&quot;spark.hadoop.fs.s3a.access.key&quot;, &quot;minioadmin&quot;) \
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    .config(&quot;spark.hadoop.fs.s3a.secret.key&quot;, &quot;minioadmin&quot;) \
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    .config(&quot;spark.hadoop.fs.s3a.path.style.access&quot;, &quot;true&quot;) \
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    .config(&quot;spark.hadoop.fs.s3a.impl&quot;, &quot;org.apache.hadoop.fs.s3a.S3AFileSystem&quot;) \
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    .getOrCreate()
 </span></code></pre></div>
-<h3 id="3-tabela-fato-ouvidoria-o-coracao-do-projeto">3. Tabela Fato Ouvidoria (O Coração do Projeto)</h3>
-<p>O maior desafio técnico foi a Ponte de Localidade. Como a tabela de ouvidoria não possuía a cidade diretamente, cruzamos os dados através do usuário.</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">workspace</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">fato_ouvidoria</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">SELECT</span><span class="w"> </span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="k">DATA</span><span class="w">             </span><span class="k">AS</span><span class="w"> </span><span class="n">FK_TEMPO</span><span class="p">,</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">u_dim</span><span class="p">.</span><span class="n">SK_USUARIO</span><span class="w">   </span><span class="k">AS</span><span class="w"> </span><span class="n">FK_USUARIO</span><span class="p">,</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">l</span><span class="p">.</span><span class="n">SK_LOCALIDADE</span><span class="w">    </span><span class="k">AS</span><span class="w"> </span><span class="n">FK_LOCALIDADE</span><span class="p">,</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">           </span><span class="k">AS</span><span class="w"> </span><span class="n">QUANTIDADE_OUVIDORIA</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">FROM</span><span class="w"> </span><span class="n">silver_ouvidoria</span><span class="w"> </span><span class="n">o</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">workspace</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">dim_tempo</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">CAST</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">DATA_OUVIDORIA</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">DATE</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="k">DATA</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">workspace</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">dim_usuario</span><span class="w"> </span><span class="n">u_dim</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">COD_USUARIO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u_dim</span><span class="p">.</span><span class="n">ID_USUARIO</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">silver_usuario</span><span class="w"> </span><span class="n">u_silv</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">COD_USUARIO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u_silv</span><span class="p">.</span><span class="n">ID_USUARIO</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">workspace</span><span class="p">.</span><span class="n">gold</span><span class="p">.</span><span class="n">dim_localidade</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u_silv</span><span class="p">.</span><span class="n">COD_CIDADE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">ID_CIDADE</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="k">DATA</span><span class="p">,</span><span class="w"> </span><span class="n">u_dim</span><span class="p">.</span><span class="n">SK_USUARIO</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">SK_LOCALIDADE</span><span class="p">;</span>
-</span></code></pre></div>
-<h2 id="valor-agregado-ao-negocio">Valor Agregado ao Negócio</h2>
-<p>Com a Camada Gold finalizada, conseguimos responder perguntas como:</p>
+<h1 id="entendendo-os-parametros">Entendendo os Parâmetros</h1>
 <ul>
 <li>
-<p>"Qual o estado com maior número de reclamações?"</p>
+<p><strong>spark.jars.packages:</strong> Instrução para o Spark baixar os tradutores necessários da internet:  </p>
 </li>
 <li>
-<p>"Qual a evolução mensal de ouvidorias por perfil de usuário?"</p>
+<p>Driver JDBC do PostgreSQL (org.postgresql).  </p>
 </li>
 <li>
-<p>"Existe concentração de problemas em cidades específicas?"</p>
+<p>Conector do Delta Lake (io.delta).  </p>
+</li>
+<li>
+<p><strong>Protocolo</strong> AWS S3 para conexão com o MinIO (hadoop-aws).  </p>
+</li>
+<li>
+<p><strong>spark.sql.extensions:</strong> Altera a engine nativa de SQL do Spark para que ele reconheça comandos específicos do Delta, como UPDATE e MERGE.</p>
+</li>
+<li>
+<p><strong>spark.hadoop.fs.s3a.:</strong> Conjunto de chaves de ambiente que mascara o nosso MinIO local para que o Spark acredite estar conversando com um bucket real do Amazon S3.</p>
 </li>
 </ul>
 <div class="admonition success">
-<p class="admonition-title">Conclusão Técnica</p>
-<p>O uso de Surrogate Keys (SK_USUARIO, SK_LOCALIDADE) garante que, mesmo que o ID do banco operacional mude, nosso histórico analítico permaneça íntegro.</p>
+<p class="admonition-title">Performance em Memória</p>
+<p>Ao utilizar a API de DataFrames do PySpark com as configurações acima, garantimos que os dados da Ouvidoria sejam processados inteiramente em memória e paralelizados, evitando gargalos de leitura e escrita em disco.</p>
 </div>
 
 

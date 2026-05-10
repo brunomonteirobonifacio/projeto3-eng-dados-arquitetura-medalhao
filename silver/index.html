@@ -822,16 +822,16 @@
 </span></code></pre></div>
 <h3 id="2-tratamento-de-strings">2. Tratamento de Strings</h3>
 <p>Transformamos todos os campos de texto para caixa alta (upper) para evitar problemas de duplicidade em filtros (ex: "São Paulo" vs "são paulo").]</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql.functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">col</span><span class="p">,</span> <span class="n">upper</span>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>from pyspark.sql.functions import col, upper
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Aplicando upper em colunas de texto</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;NOME_CIDADE&quot;</span><span class="p">,</span> <span class="n">upper</span><span class="p">(</span><span class="n">col</span><span class="p">(</span><span class="s2">&quot;NOME_CIDADE&quot;</span><span class="p">)))</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a># Aplicando upper em colunas de texto
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>df = df.withColumn(&quot;NOME_CIDADE&quot;, upper(col(&quot;NOME_CIDADE&quot;)))
 </span></code></pre></div>
 <h3 id="3-enriquecimento-de-metadados">3. Enriquecimento de Metadados</h3>
 <p>Assim como na Bronze, adicionamos uma coluna de controle para saber quando o dado foi refinado pela última vez:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pyspark.sql.functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">current_timestamp</span>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>from pyspark.sql.functions import current_timestamp
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">withColumn</span><span class="p">(</span><span class="s2">&quot;DATA_PROCESSAMENTO_SILVER&quot;</span><span class="p">,</span> <span class="n">current_timestamp</span><span class="p">())</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>df = df.withColumn(&quot;DATA_PROCESSAMENTO_SILVER&quot;, current_timestamp())
 </span></code></pre></div>
 <h3 id="regras-de-negocio-implementadas">Regras de Negócio Implementadas</h3>
 <p>Durante o processamento das tabelas de Usuário e Ouvidoria, aplicamos:</p>
@@ -845,7 +845,7 @@
 </ul>
 <h3 id="persistencia">Persistência</h3>
 <p>Os dados são salvos no esquema <code>workspace.silver</code> utilizando o comando overwrite para garantir que a versão mais limpa dos dados esteja sempre disponível.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="o">.</span><span class="n">write</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;delta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="s2">&quot;overwrite&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">saveAsTable</span><span class="p">(</span><span class="s2">&quot;workspace.silver.tabela_limpa&quot;</span><span class="p">)</span>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>df.write.format(&quot;delta&quot;).mode(&quot;overwrite&quot;).saveAsTable(&quot;workspace.silver.tabela_limpa&quot;)
 </span></code></pre></div>
 <div class="admonition success">
 <p class="admonition-title">Resultado</p>
