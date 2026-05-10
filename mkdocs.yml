@@ -31,11 +31,12 @@ theme:
 
 nav:
   - Início: index.md
-  - Preparação: preparacao.md
+  - Preparação Ambiente: preparacao.md
   - Extração (Landing): landing.md
   - Camada Bronze: bronze.md
   - Camada Silver: silver.md
   - Camada Gold: gold.md
+  - Destruição Ambiente: destruicao.md
 
 markdown_extensions:
   - admonition
