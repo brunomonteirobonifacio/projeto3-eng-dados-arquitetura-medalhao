@@ -21,7 +21,7 @@ df_landing = spark.table("workspace.landing.ouvidoria")
 ### 2. Enriquecimento com Metadados Técnicos
 Para garantir a governança, adicionamos colunas que não existiam no banco original. Isso é essencial para depuração (debug) e auditoria.
 
-```
+```python
 from pyspark.sql.functions import current_timestamp, lit
 
 # Adicionando timestamp de processamento e a origem do dado
@@ -33,7 +33,7 @@ df_bronze = df_landing \
 ### 3. Persistência em Formato Delta
 Diferente de um banco relacional comum, salvamos os dados no formato Delta, que permite alta performance em Big Data.
 
-```
+```python
 # Escrita na camada Bronze do Unity Catalog
 (df_bronze.write
   .format("delta")

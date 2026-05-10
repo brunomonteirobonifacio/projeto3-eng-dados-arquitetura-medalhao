@@ -25,7 +25,7 @@ for col_name in df.columns:
 ### 2. Tratamento de Strings
 Transformamos todos os campos de texto para caixa alta (upper) para evitar problemas de duplicidade em filtros (ex: "São Paulo" vs "são paulo").]
 
-```
+```python
 from pyspark.sql.functions import col, upper
 
 # Aplicando upper em colunas de texto
@@ -35,7 +35,7 @@ df = df.withColumn("NOME_CIDADE", upper(col("NOME_CIDADE")))
 ### 3. Enriquecimento de Metadados
 Assim como na Bronze, adicionamos uma coluna de controle para saber quando o dado foi refinado pela última vez:
 
-```
+```python
 from pyspark.sql.functions import current_timestamp
 
 df = df.withColumn("DATA_PROCESSAMENTO_SILVER", current_timestamp())
@@ -51,7 +51,7 @@ Durante o processamento das tabelas de Usuário e Ouvidoria, aplicamos:
 ### Persistência
 Os dados são salvos no esquema ```workspace.silver``` utilizando o comando overwrite para garantir que a versão mais limpa dos dados esteja sempre disponível.
 
-```
+```python
 df.write.format("delta").mode("overwrite").saveAsTable("workspace.silver.tabela_limpa")
 ```
 
