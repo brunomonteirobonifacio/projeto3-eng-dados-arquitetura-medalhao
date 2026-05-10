@@ -26,7 +26,7 @@ Para a execução deste projeto, utilizamos as seguintes tecnologias:
 ## Equipe
 - **Bruno Monteiro**
 - **Luis Filipe Damiani**
-- **Gian luca Andrade**
+- **Gianluca Andrade**
 
 ## Como este site está organizado
 Navegue pelo menu lateral para entender cada fase do desenvolvimento:
