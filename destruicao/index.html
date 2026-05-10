@@ -12,13 +12,11 @@
         <meta name="author" content="Bruno M, Gianluca A e Luis Filipe D">
       
       
-        <link rel="canonical" href="https://github.com/brunomonteirobonifacio/projeto3-eng-dados-arquitetura-medalhao/landing/">
+        <link rel="canonical" href="https://github.com/brunomonteirobonifacio/projeto3-eng-dados-arquitetura-medalhao/destruicao/">
       
       
-        <link rel="prev" href="../preparacao/">
+        <link rel="prev" href="../gold/">
       
-      
-        <link rel="next" href="../bronze/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Extração (Landing) - Pipeline de Dados - Ouvidoria (SATC)</title>
+        <title>Destruição Ambiente - Pipeline de Dados - Ouvidoria (SATC)</title>
       
     
     
@@ -80,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#extracao-de-dados-landing-zone" class="md-skip">
+        <a href="#limpeza-e-reset-do-ambiente" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -114,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Extração (Landing)
+              Destruição Ambiente
             
           </span>
         </div>
@@ -261,11 +259,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../landing/" class="md-tabs__link">
         
   
   
@@ -339,9 +335,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../destruicao/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -457,37 +455,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Extração (Landing)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../landing/" class="md-nav__link">
         
   
   
@@ -503,70 +474,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#conexao-com-a-fonte-supabase" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conexão com a Fonte (Supabase)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tabelas-extraidas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tabelas Extraídas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logica-de-extracao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lógica de Extração
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tratamento-de-erros-e-permissoes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tratamento de Erros e Permissões
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -656,10 +563,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../destruicao/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Destruição Ambiente
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -675,6 +609,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#atencao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atenção
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-script-de-limpeza-total" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Script de Limpeza Total
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -706,10 +682,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#conexao-com-a-fonte-supabase" class="md-nav__link">
+  <a href="#atencao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Conexão com a Fonte (Supabase)
+        Atenção
       
     </span>
   </a>
@@ -717,32 +693,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tabelas-extraidas" class="md-nav__link">
+  <a href="#1-script-de-limpeza-total" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tabelas Extraídas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logica-de-extracao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lógica de Extração
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tratamento-de-erros-e-permissoes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tratamento de Erros e Permissões
+        1. Script de Limpeza Total
       
     </span>
   </a>
@@ -769,44 +723,31 @@
   
 
 
-<h1 id="extracao-de-dados-landing-zone">Extração de Dados (Landing Zone)</h1>
-<p>A camada <strong>Landing</strong> é o ponto de entrada de todos os dados no nosso Data Lakehouse. O objetivo aqui foi estabelecer uma conexão segura com o banco de dados operacional e replicar as tabelas brutas para o ambiente analítico.</p>
-<h2 id="conexao-com-a-fonte-supabase">Conexão com a Fonte (Supabase)</h2>
-<p>Diferente de extrações baseadas em arquivos CSV, optamos por uma conexão direta via <strong>JDBC/Psycopg2</strong>. </p>
-<ul>
-<li><strong>Tecnologia:</strong> Python + SQL.</li>
-<li><strong>Protocolo:</strong> Conexão segura com o endpoint do PostgreSQL no Supabase.</li>
-<li><strong>Desafio Técnico:</strong> Configuramos o driver para suportar a extração em lote, garantindo que o volume de dados não sobrecarregasse a memória do cluster.</li>
-</ul>
-<h2 id="tabelas-extraidas">Tabelas Extraídas</h2>
-<p>O script percorre o esquema <code>public</code> do Supabase e identifica as tabelas do sistema de ouvidoria. Foram extraídas 7 tabelas fundamentais:</p>
-<ul>
-<li><code>estado</code></li>
-<li><code>cidade</code></li>
-<li><code>usuario</code></li>
-<li><code>ouvidoria</code></li>
-<li><code>tipo_ouvidoria</code></li>
-<li><code>servico_afetado</code></li>
-<li><code>anexo</code></li>
-</ul>
-<h2 id="logica-de-extracao">Lógica de Extração</h2>
-<p>O processo segue os seguintes passos lógicos:</p>
+<h1 id="limpeza-e-reset-do-ambiente">Limpeza e Reset do Ambiente</h1>
+<p>Para garantir a integridade dos testes e permitir que o pipeline seja executado do zero sem resíduos de execuções anteriores, desenvolvemos um script de <strong>Limpeza Total</strong>.</p>
+<h2 id="atencao">Atenção</h2>
+<p>O uso do comando <code>CASCADE</code> removerá permanentemente todos os dados e metadados associados aos esquemas. Utilize este processo apenas em ambiente de desenvolvimento ou quando desejar reiniciar o ciclo da <strong>Arquitetura Medallion</strong>.</p>
+<h2 id="1-script-de-limpeza-total">1. Script de Limpeza Total</h2>
+<p>O comando abaixo apaga sistematicamente todas as camadas do nosso Lakehouse no <strong>Unity Catalog</strong>.</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Apagar todas as tabelas da camada bronze</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">DROP</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">workspace</span><span class="p">.</span><span class="n">bronze</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">-- Apagar todas as tabelas da camada silver</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">DROP</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">workspace</span><span class="p">.</span><span class="n">silver</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">-- Apagar todas as tabelas da camada gold</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">DROP</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">workspace</span><span class="p">.</span><span class="n">gold</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">-- Apagar todas as tabelas da camada landing (origem)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">DROP</span><span class="w"> </span><span class="k">SCHEMA</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">workspace</span><span class="p">.</span><span class="n">landing</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">;</span>
+</span></code></pre></div>
 <ol>
-<li><strong>Conexão:</strong> Autenticação no Supabase utilizando credenciais seguras.</li>
-<li><strong>Varredura:</strong> Consulta ao <code>information_schema</code> para listar todas as tabelas disponíveis no schema configurado.</li>
-<li><strong>Ingestão:</strong> Leitura dos dados via Pandas para processamento inicial e conversão imediata para Spark DataFrame.</li>
-<li><strong>Persistência:</strong> Escrita dos dados no catálogo <code>workspace.landing</code> utilizando o formato Delta para garantir a integridade.</li>
+<li>Validação da Limpeza
+Após a execução do script, validamos se o catálogo workspace está limpo. O resultado esperado é que os nomes dos esquemas acima não constem mais na lista oficial.</li>
 </ol>
-<h2 id="tratamento-de-erros-e-permissoes">Tratamento de Erros e Permissões</h2>
-<p>Durante o desenvolvimento, implementamos verificações de:</p>
-<ul>
-<li><strong>Validacão de Esquema:</strong> Garantia de que o código aponta para o schema correto (<code>public</code>).</li>
-<li><strong>Controle de Acesso:</strong> Gerenciamento de permissões via Unity Catalog para permitir a criação de tabelas no destino.</li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">Nota Técnica</p>
-<p>O uso do modo <code>overwrite</code> na escrita garante que a Landing Zone seja atualizada a cada execução, servindo como um "snapshot" atualizado do sistema operacional.</p>
-</div>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- Confirmar se tudo foi limpo</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">SHOW</span><span class="w"> </span><span class="n">SCHEMAS</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="n">workspace</span><span class="p">;</span>
+</span></code></pre></div>
 
 
 
