@@ -14,7 +14,7 @@ Projeto desenvolvido para a disciplina de Engenharia de Dados, focado na constru
 
 O fluxo de dados segue o padrão de medalhão, garantindo a qualidade da informação em cada etapa do processo:
 
-![Arquitetura da Pipeline de Dados](docs/Imagens/arquitetura.svg)
+![Arquitetura da Pipeline de Dados](docs/Imagens/arquitetura.png)
 
 # Estrutura do Projeto
 ```
