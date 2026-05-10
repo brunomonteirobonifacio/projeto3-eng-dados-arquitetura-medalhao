@@ -45,7 +45,7 @@ projeto3-eng-dados-arquitetura-medalhao/
 ### 1. Databricks (Notebooks)
 Os notebooks devem ser executados na ordem numérica na plataforma Databricks:
 
-01_preparacao: Cria os esquemas (databases) no seu catálogo.
+01_preparacao_ambiente: Cria os esquemas (databases) no seu catálogo.
 
 02_extracao_landing: Realiza a extração dos dados do Supabase.
 
@@ -54,6 +54,8 @@ Os notebooks devem ser executados na ordem numérica na plataforma Databricks:
 04_silver_layer: Aplica regras de limpeza, conversão para maiúsculas e padronização.
 
 05_gold_layer: Cria o Star Schema final com chaves substitutas (Surrogate Keys).
+
+06_destruicao_ambiente: Destroi o ambiente permitindo executar os notebooks novamente de maneira limpa.
 
 ### 2. Documentação Local (MkDocs)
 Para visualizar a documentação detalhada das transformações e regras de negócio:
