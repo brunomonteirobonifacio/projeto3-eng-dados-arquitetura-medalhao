@@ -2,8 +2,8 @@
 
 O sucesso de um projeto de Engenharia de Dados depende de um ambiente bem estruturado. Nesta etapa inicial, configuramos a fundação do nosso **Data Lakehouse** no Databricks utilizando o **Unity Catalog**.
 
-## A Arquitetura Medallion
-Adotamos a **Arquitetura Medallion**, que organiza os dados em camadas de qualidade crescente:
+## A Arquitetura Medalhão
+Adotamos a **Arquitetura Medalhão**, que organiza os dados em camadas de qualidade crescente:
 
 1. **Landing Zone:** Dados brutos extraídos diretamente do Supabase.
 2. **Bronze:** Dados técnicos com metadados de rastreabilidade.

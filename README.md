@@ -1,11 +1,11 @@
-# Projeto Pipeline de Dados - Ouvidoria (Medallion Architecture)
+# Projeto Pipeline de Dados - Ouvidoria (Arquitetura Medalhão)
 
 Projeto desenvolvido para a disciplina de Engenharia de Dados, focado na construção de um ecossistema de dados completo utilizando **Databricks** e **Delta Lake**. O pipeline realiza a extração de um banco de dados relacional **Supabase (PostgreSQL)** e organiza os dados seguindo a arquitetura de medalhão dentro do **Unity Catalog**.
 
 ## Funcionalidades
 
 * **Extração Robusta:** Conexão via JDBC/Psycopg2 com base de dados Supabase na nuvem.
-* **Arquitetura Medallion:** Implementação completa das camadas Landing, Bronze, Silver e Gold.
+* **Arquitetura MedalliMedalhãon:** Implementação completa das camadas Landing, Bronze, Silver e Gold.
 * **Governança de Dados:** Utilização do Unity Catalog para controlo de permissões e linhagem.
 * **Modelagem Dimensional:** Criação de um Star Schema com tabelas Fato e Dimensão para BI.
 * **Documentação Automatizada:** Site estático gerado via MkDocs com o tema Material.

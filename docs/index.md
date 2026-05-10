@@ -20,7 +20,7 @@ Para a execução deste projeto, utilizamos as seguintes tecnologias:
 * **Processamento:** Apache Spark (PySpark)
 * **Plataforma:** Databricks
 * **Governança:** Unity Catalog
-* **Formato de Armazenamento:** Delta Lake (Arquitetura Medallion)
+* **Formato de Armazenamento:** Delta Lake (Arquitetura Medalhão)
 * **Documentação:** MkDocs
 
 ## Equipe
