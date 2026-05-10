@@ -1,0 +1,53 @@
+site_name: Pipeline de Dados - Ouvidoria (SATC)
+site_description: Documentação do projeto de Engenharia de Dados com Spark, Delta Lake e PostgreSQL.
+site_author: Bruno M, Gianluca A e Luis Filipe D
+site_url: https://github.com/brunomonteirobonifacio/projeto3-eng-dados-arquitetura-medalhao
+
+repo_name: projeto3-eng-dados-arquitetura-medalhao
+repo_url: https://github.com/brunomonteirobonifacio/projeto3-eng-dados-arquitetura-medalhao
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: default
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+    - scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+
+nav:
+  - Início: index.md
+  - Preparação: preparacao.md
+  - Extração (Landing): landing.md
+  - Camada Bronze: bronze.md
+  - Camada Silver: silver.md
+  - Camada Gold: gold.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.details
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+plugins:
+  - search
