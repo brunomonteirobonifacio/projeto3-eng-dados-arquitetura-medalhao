@@ -66,8 +66,17 @@ poetry install
 # Iniciar o servidor local
 poetry run mkdocs serve
 ```
-# Equipe]
+# Equipe
 
 - Bruno M.
 - Gianluca A.
 - Luis Filipe D.
+
+  ## 🔗 Links e Referências
+
+### Referências 
+- **[Databricks Documentation](https://docs.databricks.com/)**: Guia oficial da plataforma de processamento e governança.
+- **[Apache Spark PySpark API](https://spark.apache.org/docs/latest/api/python/index.html)**: Referência técnica para transformações de dados.
+- **[Delta Lake Documentation](https://docs.delta.io/latest/index.html)**: Detalhes sobre transações ACID e Time Travel no Lakehouse.
+- **[Unity Catalog Guide](https://www.databricks.com/product/unity-catalog)**: Melhores práticas para governança e segurança de dados.
+- **[Supabase (PostgreSQL) Docs](https://supabase.com/docs/guides/database)**: Referência sobre a fonte de dados operacional e conectividade.
